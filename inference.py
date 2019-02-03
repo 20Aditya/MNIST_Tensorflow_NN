@@ -24,7 +24,7 @@ checkpoint_file = tf.train.latest_checkpoint(os.path.join(hy_param.checkpoint_di
 saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
 
 # Loading test data
-test_data = np.array([mnist.test.images[15]])
+test_data = np.array([mnist.test.images[43]])
 
 # Loading input variable from the model
 input_x = tf.get_default_graph().get_operation_by_name("input_x").outputs[0]
@@ -38,7 +38,7 @@ with tf.Session() as sess:
     saver.restore(sess, checkpoint_file)
     
     # Executing the model to make predictions    
-    data = sess.run(prediction, feed_dict={input_x: test_data })
+    data = sess.run(prediction, feed_dict={input_x: test_data })    
     
     print("Predicted digit: ", data.argmax() )
 

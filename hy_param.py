@@ -15,6 +15,7 @@ display_step = 1
 #Network Parameters
 n_hidden1 = 300
 n_hidden2 = 300
+n_hidden3 = 300
 num_input = 784
 num_classes = 10
 

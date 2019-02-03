@@ -16,12 +16,14 @@ Y = tf.placeholder("float",[None,hy_param.num_classes],name="input_y")
 weights = {
     'h1' : tf.Variable(tf.random_normal([hy_param.num_input,hy_param.n_hidden1])),
     'h2' : tf.Variable(tf.random_normal([hy_param.n_hidden1,hy_param.n_hidden2])),
-    'out': tf.Variable(tf.random_normal([hy_param.n_hidden2,hy_param.num_classes]))
+    'h3' : tf.Variable(tf.random_normal([hy_param.n_hidden2,hy_param.n_hidden3])),
+    'out': tf.Variable(tf.random_normal([hy_param.n_hidden3,hy_param.num_classes]))
            }
            
 biases = {
     'b1': tf.Variable(tf.random_normal([hy_param.n_hidden1])),
     'b2': tf.Variable(tf.random_normal([hy_param.n_hidden2])),
+    'b3': tf.Variable(tf.random_normal([hy_param.n_hidden3])),
     'out': tf.Variable(tf.random_normal([hy_param.num_classes]))
           }
           
@@ -29,9 +31,10 @@ biases = {
 #defining the operation of the hidden layers
 layer_1 = tf.add(tf.matmul(X,weights['h1']),biases['b1'])
 layer_2 = tf.add(tf.matmul(layer_1,weights['h2']),biases['b2'])
+layer_3 = tf.add(tf.matmul(layer_2,weights['h3']),biases['b3'])
 
 # Output fully connected layer with a neuron for each class
-logits = tf.matmul(layer_2,weights['out']) + biases['out']
+logits = tf.matmul(layer_3,weights['out']) + biases['out']
                    
 # Performing softmax operation
 prediction = tf.nn.softmax(logits,name='prediction')
