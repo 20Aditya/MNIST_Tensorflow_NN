@@ -8,7 +8,7 @@ Created on Sat Feb  2 22:04:00 2019
 
 #Parameters
 learning_rate = 0.01
-num_steps = 100
+num_steps = 200
 batch_size = 128
 display_step = 1
 

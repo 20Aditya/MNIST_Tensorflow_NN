@@ -1,2 +1,3 @@
-model_checkpoint_path: "/media/aditya/2C28B37028B337A2/Projects/MNIST/runs/checkpoints/model-100"
+model_checkpoint_path: "/media/aditya/2C28B37028B337A2/Projects/MNIST/runs/checkpoints/model-200"
 all_model_checkpoint_paths: "/media/aditya/2C28B37028B337A2/Projects/MNIST/runs/checkpoints/model-100"
+all_model_checkpoint_paths: "/media/aditya/2C28B37028B337A2/Projects/MNIST/runs/checkpoints/model-200"

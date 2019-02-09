@@ -24,7 +24,7 @@ checkpoint_file = tf.train.latest_checkpoint(os.path.join(hy_param.checkpoint_di
 saver = tf.train.import_meta_graph("{}.meta".format(checkpoint_file))
 
 # Loading test data
-test_data = np.array([mnist.test.images[43]])
+test_data = np.array([mnist.test.images[17]])
 
 # Loading input variable from the model
 input_x = tf.get_default_graph().get_operation_by_name("input_x").outputs[0]

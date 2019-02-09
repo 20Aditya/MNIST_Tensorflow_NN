@@ -71,6 +71,6 @@ with tf.Session() as sess:
         sess.run(model.accuracy, feed_dict={X: mnist.test.images,
                                       Y: mnist.test.labels}))
     
-    num = [i+1 for i in range(100)]
+    num = [i+1 for i in range(hy_param.num_steps)]
     plt.plot(num,all_loss)
     plt.show()
